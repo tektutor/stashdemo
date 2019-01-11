@@ -1,0 +1,64 @@
+Rebase with conflicts
++++++++++++++++++++++
+
+mkdir RebaseDemo
+cd RebaseDemo
+git init
+
+echo "VW Polo" >> cars.txt
+git add cars.txt
+git commit -m "Added Polo"
+
+echo "VW Vento" >> cars.txt
+git add cars.txt
+git commit -m "Added Vento"
+
+git log
+
+git checkout -b feature1
+
+echo "Skoda Kodiaq" >> cars.txt
+git add cars.txt
+git commit -m "Added Kodiaq"
+
+echo "Skoda Octavia" >> cars.txt
+git add cars.txt
+git commit -m "Added Octavia"
+
+git log
+
+git checkout master
+
+echo "Skoda Rapid" >> cars.txt
+git add cars.txt
+git commit -m "Added Rapid"
+
+echo "VW Tiguan" >> cars.txt
+git add cars.txt
+git commit -m "Added Tiguan"
+
+git log
+
+git checkout feature1
+
+git rebase master
+
+Resolve the conflicts in temporary branch created by rebase and stage the changes
+
+git rebase --continue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
